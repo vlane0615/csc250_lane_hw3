@@ -1,0 +1,38 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter your String here: ");
+    String inputString = input.nextLine();
+    System.out.println(inputString);
+    byte byteB = 'a';
+    System.out.println(byteB);
+    char[] ar = inputString.toCharArray();
+    for(char c : ar)
+    { //convert c to a byte type variable //use new variable instead of c 
+      String bitString = "";
+      for(int i = 0; i < 8; i++)
+      {
+        if(c % 2 == 0)
+        {
+          //bit is 0 
+          bitString = "0" + bitString;
+        }
+        else
+        {
+          //bit is 1
+          bitString = "1" + bitString;
+        }
+         //this updates c to "move" to the next value; use integer div.
+        c = c / (char)2; //loop 8 times //use byte data type here //or force it into a char
+      }
+      System.out.print(bitString);
+    }
+  }
+}
+   //if char % 2 then bit = 0;
+     //else then bit = 1; 
+     //save each bit to new string
+     //divide char value by 2  
+//Write a program that prompts the user for a String
+//Display the binary equivalent of the string to the screen
